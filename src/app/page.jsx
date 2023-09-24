@@ -9,7 +9,7 @@ import { Interface } from "../components/Interface";
 export default function Home() {
 
   return (
-    <div className="w-screen h-screen bg-gradient-to-r from-[#0096C7] via-[#0096C7] to-[#023E8A]">
+    <div className="w-screen h-screen bg-[#0D0D0D] ">
       <Canvas
         shadows
         camera={{ position: [3, 3, 3], fov: 30 }}
