@@ -1,4 +1,8 @@
 import PrimaryButton from "./PrimaryButton";
+import { IconBrandLinkedin } from '@tabler/icons-react';
+import { IconBrandGithub } from '@tabler/icons-react';
+import { IconMail } from '@tabler/icons-react';
+import { IconDeviceLandlinePhone } from '@tabler/icons-react';
 const Section = (props) => {
   const { children } = props;
 
@@ -15,7 +19,7 @@ export const Interface = () => {
       <AboutSection />
       <SkillsSection />
       <Section>
-        <h1>Projects</h1>
+        <h1 className="text-red-500">Projects</h1>
       </Section>
       <ContactSection />
     </div>
@@ -25,7 +29,6 @@ export const Interface = () => {
 const AboutSection = () => {
   return (
     <Section>
-      {/* <div className="w-[350px] md:w-[500px] lg:w-[700px] xl:w-[800px] h-[550px] bg-[#22252E] rounded-xl flex flex-col items-center justify-center gap-8"> */}
       <div className="w-[350px] md:w-[500px] lg:w-[700px] xl:w-[800px]  h-[100px] text-[#F2B450]  font-teko text-3xl lg:text-4xl xl:text-5xl">
         👋 Hi , I' am Houssam Lalouli 👦🏻
       </div>
@@ -90,7 +93,7 @@ const SkillsSection = () => {
         </h2>
         <div className="mt-8 space-y-8"> 
           {skills.map((skill, index) => (
-              <div className="w-96" key={index}>
+              <div className="w-80" key={index}>
                 <h3 className="text-xl font-skranji text-[#E8F1F2]"> {skill.title}</h3>
                   <div className="h-2 w-full rounded-full mt-2  bg-gray-100">
                     <div className="h-full bg-[#B3EFB2] rounded-full"
@@ -108,7 +111,7 @@ const SkillsSection = () => {
         </h2>
         <div className="mt-8 space-y-8"> 
           {languages.map((lgl, index) => (
-              <div className="w-96" key={index}>
+              <div className="w-80" key={index}>
                 <h3 className="text-xl font-skranji text-[#E8F1F2]"> {lgl.title}</h3>
                   <div className="h-2 w-full rounded-full mt-2  bg-gray-100">
                     <div className="h-full bg-[#B3EFB2] rounded-full"
@@ -136,25 +139,28 @@ const ContactSection = () => {
           Contact
         </h2>
         <div className="mt-10 space-y-12">
-          <p className="text-xl font-skranji font-bold text-[#B3EFB2]">
-            LinkedIn:{" "}
+          <p className="w-[400px]  text-xl flex flex-row font-skranji font-bold text-[#B3EFB2] gap-2">
+            <IconBrandLinkedin/>LinkedIn:{" "}
             <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" rel="noopener noreferrer" className="text-2xl font-teko font-bold text-[#E8F1F2]">
               LinkedIn Profile
             </a>
           </p>
-          <p className="text-xl font-skranji font-bold text-[#B3EFB2]">
+          <p className="w-[400px] text-xl flex flex-row  font-skranji font-bold text-[#B3EFB2] gap-2">
+            <IconBrandGithub/>
             GitHub:{" "}
             <a href="https://github.com/your-github-profile" target="_blank" rel="noopener noreferrer" className="text-2xl font-teko font-bold text-[#E8F1F2]">
              GitHub Profile
             </a>
           </p>
-          <p className="text-xl font-skranji font-bold text-[#B3EFB2]">
+          <p className="w-[400px] text-xl flex flex-row font-skranji font-bold text-[#B3EFB2] gap-2">
+            <IconMail/>
             Email:{" "}
             <a href="mailto:your-email@example.com" target="_blank" rel="noopener noreferrer" className="text-2xl font-teko font-bold text-[#E8F1F2]">
               email@example.com
             </a>
           </p>
-          <p className="text-xl font-skranji font-bold text-[#B3EFB2]">
+          <p className="w-[400px] text-xl flex flex-row font-skranji font-bold text-[#B3EFB2] gap-2">
+            <IconDeviceLandlinePhone/>
             Phone Number:{" "}
             <a className="text-2xl font-teko font-bold text-[#E8F1F2]">
             06 00 00 00 00
