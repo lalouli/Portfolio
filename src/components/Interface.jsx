@@ -22,6 +22,7 @@ export const Interface = () => {
         <h1 className="text-red-500">Projects</h1>
       </Section>
       <ContactSection />
+      <ContactMeSection />
     </div>
   );
 };
@@ -38,10 +39,7 @@ const AboutSection = () => {
         and translating design concepts into visually appealing interfaces. With
         my skills, I deliver captivating and high-quality web experiences.😇
       </div>
-      {/* </div> */}
-      <div className="w-[350px] md:w-[500px] lg:w-[700px] xl:w-[800px] h-[100px] flex items-center justify-center">
-        <PrimaryButton text="Contact Me" />
-      </div>
+      
     </Section>
   );
 };
@@ -171,3 +169,50 @@ const ContactSection = () => {
     </Section>
   );
 }
+
+const ContactMeSection = () => {
+  return (
+    <Section>
+       <h2 className="text-5xl font-teko font-bold text-[#F2B450]">Contact me</h2>
+      <div className="mt-8 p-8 rounded-md bg-[#7A9E7E] w-96 max-w-full">
+        <form>
+          <label for="name" className="font-medium font-skranji text-[#E8F1F2] block mb-1">
+            Name
+          </label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 bg-[#D9F4E4] ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 p-3 font-skranji"
+          />
+          <label
+            for="email"
+            className="font-medium font-skranji text-[#E8F1F2] block mb-1 mt-8"
+          >
+            Email
+          </label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 bg-[#D9F4E4]  ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 p-3 font-skranji"
+          />
+          <label
+            for="email"
+            className="font-medium font-skranji text-[#E8F1F2] block mb-1 mt-8"
+          >
+            Message
+          </label>
+          <textarea
+            name="message"
+            id="message"
+            className="h-32 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1  bg-[#D9F4E4] ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 p-3 font-skranji"
+          />
+          <div className="flex items-center justify-center py-4 px-8 rounded-lg font-bold text-lg mt-16 ">
+                  <PrimaryButton text="Submit" />
+          </div>
+        </form>
+      </div>
+    </Section>
+  );
+};

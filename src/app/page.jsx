@@ -17,7 +17,7 @@ export default function Home() {
         shadows
         camera={{ position: [3, 3, 3], fov: 30 }}
       >
-        <ScrollControls pages={4} damping={0.1} >
+        <ScrollControls pages={5} damping={0.1} >
           <Experience />
           <Scroll html>
           <Image
