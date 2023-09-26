@@ -24,8 +24,8 @@ export default function Home() {
               src={Logo}
               alt="level icon"
               className="ml-10 mt-10 "
-              width={100}
-              height={80}
+              width={80}
+              height={60}
             />
            <Interface/>
           </Scroll>
