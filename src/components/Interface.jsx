@@ -243,7 +243,19 @@ const ContactSection = () => {
     <Section>
       <div>
         <h2 className="text-5xl font-teko font-bold text-[#F2B450]">Contact</h2>
-        <div className="mt-10 space-y-12">
+        <div className="flex flex-row justify-between   w-full">
+        <>
+          <motion.img
+            className="h-[800px] w-[50%]   object-cover object-center"
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1.9 }}
+            src="view-3d-confident-businessman-removebg-preview.png"
+            alt="nature image"
+          />
+          </>
+          <>
+        <div className="mt-10 flex flex-col justify-center items-center space-y-12">
           <motion.p
             className="w-[400px]  text-xl flex flex-row font-skranji font-bold text-[#B3EFB2] gap-2"
             initial={{ opacity: 0, y: 25 }}
@@ -304,6 +316,10 @@ const ContactSection = () => {
             </a>
           </motion.p>
         </div>
+          
+          </>
+       
+        </div>
       </div>
     </Section>
   );
@@ -312,6 +328,9 @@ const ContactSection = () => {
 const ContactMeSection = () => {
   return (
     <Section>
+        <div className="flex flex-row justify-between   w-full">
+         <></>
+        </div>
       <h2 className="text-5xl font-teko font-bold text-[#F2B450]">
         Contact me
       </h2>
@@ -377,7 +396,7 @@ const ProjectsSection = () => {
                 </h2>
               </div>
               <div className="w-full h-[600px] flex justify-center items-center">
-                <h2 className="w-[80%] text-md md:text-lg xl:text-3xl font-teko font-bold text-[#0D0D0D]">
+                <h2 className="w-[80%] text-sm md:text-lg xl:text-3xl font-skranji font-bold text-[#0D0D0D]">
                   ft_transendence is a project that combines the game of ping
                   pong with a user account system and integrated chat. Players
                   can register and create accounts to participate in multiplayer
@@ -397,7 +416,7 @@ const ProjectsSection = () => {
                 </h2>
               </div>
               <div className="w-full h-[600px] flex justify-center items-center">
-                <h2 className="w-[80%] text-md md:text-lg xl:text-3xl font-teko font-bold text-[#0D0D0D]">
+                <h2 className="w-[80%] text-md md:text-lg xl:text-3xl font-skranji font-bold text-[#0D0D0D]">
                   This project involves creating a website for a faculty that
                   includes features such as registration, exam locations,
                   schedules, grades, and other administrative functions. Users
@@ -415,7 +434,7 @@ const ProjectsSection = () => {
                 </h2>
               </div>
               <div className="w-full h-[600px] flex justify-center items-center">
-                <h2 className="w-[80%] text-md md:text-lg xl:text-3xl font-teko font-bold text-[#0D0D0D]">
+                <h2 className="w-[80%] text-md md:text-lg xl:text-3xl font-skranji font-bold text-[#0D0D0D]">
                   This project aims to enhance your system administration skills
                   with Docker. You can create multiple Docker images in a
                   personal virtual machine, each with Nginx, MariaDB, WordPress,
@@ -432,7 +451,7 @@ const ProjectsSection = () => {
                 </h2>
               </div>
               <div className="w-full h-[600px] flex justify-center items-center">
-                <h2 className="w-[80%] text-md md:text-lg xl:text-3xl font-teko font-bold text-[#0D0D0D]">
+                <h2 className="w-[80%] text-md md:text-lg xl:text-3xl font-skranji font-bold text-[#0D0D0D]">
                   This C++ project involves creating an IRC server and using an
                   IRC client to test it. IRC is a text-based communication
                   protocol that allows real-time messaging in public or private
