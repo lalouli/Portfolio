@@ -6,7 +6,7 @@ import { IconDeviceLandlinePhone } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Carousel } from "@material-tailwind/react";
-import Slider from 'react-slick';
+import Slider from "react-slick";
 const Section = (props) => {
   const { children } = props;
 
@@ -127,112 +127,113 @@ const SkillsSection = () => {
     <Section>
       <div className="flex flex-row justify-between   w-full">
         <>
-        <motion.div whileInView={"visible"}>
-        <h2 className="text-5xl font-teko font-bold text-[#F2B450]">Skills</h2>
-        <div className="mt-8 space-y-8">
-          {skills.map((skill, index) => (
-            <div className="w-80" key={index}>
-              <motion.h3
-                className="text-xl font-skranji text-[#E8F1F2]"
-                initial={{
-                  opacity: 0,
-                }}
-                variants={{
-                  visible: {
-                    opacity: 1,
-                    transition: {
-                      duration: 1,
-                      delay: 1 + index * 0.2,
-                    },
-                  },
-                }}
-              >
-                {" "}
-                {skill.title}
-              </motion.h3>
-              <div className="h-2 w-full rounded-full mt-2  bg-gray-100">
-                <motion.div
-                  className="h-full bg-[#B3EFB2] rounded-full"
-                  style={{ width: `${skill.level}%` }}
-                  initial={{
-                    scaleX: 0,
-                    originX: 0,
-                  }}
-                  variants={{
-                    visible: {
-                      scaleX: 1,
-                      transition: {
-                        duration: 1,
-                        delay: 1 + index * 0.2,
-                      },
-                    },
-                  }}
-                ></motion.div>
-              </div>
-            </div>
-          ))}
-        </div>
-        <div>
-          <h2 className="text-5xl font-teko font-bold text-[#F2B450] mt-10">
-            Language
-          </h2>
-          <div className="mt-8 space-y-8">
-            {languages.map((lgl, index) => (
-              <div className="w-80" key={index}>
-                <motion.h3
-                  className="text-xl font-skranji text-[#E8F1F2]"
-                  initial={{
-                    opacity: 0,
-                  }}
-                  variants={{
-                    visible: {
-                      opacity: 1,
-                      transition: {
-                        duration: 1,
-                        delay: 2 + index * 0.2,
-                      },
-                    },
-                  }}
-                >
-                  {lgl.title}
-                </motion.h3>
-                <div className="h-2 w-full rounded-full mt-2  bg-gray-100">
-                  <motion.div
-                    className="h-full bg-[#B3EFB2] rounded-full"
-                    style={{ width: `${lgl.level}%` }}
+          <motion.div whileInView={"visible"}>
+            <h2 className="text-5xl font-teko font-bold text-[#F2B450]">
+              Skills
+            </h2>
+            <div className="mt-8 space-y-8">
+              {skills.map((skill, index) => (
+                <div className="w-80" key={index}>
+                  <motion.h3
+                    className="text-xl font-skranji text-[#E8F1F2]"
                     initial={{
-                      scaleX: 0,
-                      originX: 0,
+                      opacity: 0,
                     }}
                     variants={{
                       visible: {
-                        scaleX: 1,
+                        opacity: 1,
                         transition: {
                           duration: 1,
-                          delay: 2 + index * 0.2,
+                          delay: 1 + index * 0.2,
                         },
                       },
                     }}
-                  ></motion.div>
+                  >
+                    {" "}
+                    {skill.title}
+                  </motion.h3>
+                  <div className="h-2 w-full rounded-full mt-2  bg-gray-100">
+                    <motion.div
+                      className="h-full bg-[#B3EFB2] rounded-full"
+                      style={{ width: `${skill.level}%` }}
+                      initial={{
+                        scaleX: 0,
+                        originX: 0,
+                      }}
+                      variants={{
+                        visible: {
+                          scaleX: 1,
+                          transition: {
+                            duration: 1,
+                            delay: 1 + index * 0.2,
+                          },
+                        },
+                      }}
+                    ></motion.div>
+                  </div>
                 </div>
+              ))}
+            </div>
+            <div>
+              <h2 className="text-5xl font-teko font-bold text-[#F2B450] mt-10">
+                Language
+              </h2>
+              <div className="mt-8 space-y-8">
+                {languages.map((lgl, index) => (
+                  <div className="w-80" key={index}>
+                    <motion.h3
+                      className="text-xl font-skranji text-[#E8F1F2]"
+                      initial={{
+                        opacity: 0,
+                      }}
+                      variants={{
+                        visible: {
+                          opacity: 1,
+                          transition: {
+                            duration: 1,
+                            delay: 2 + index * 0.2,
+                          },
+                        },
+                      }}
+                    >
+                      {lgl.title}
+                    </motion.h3>
+                    <div className="h-2 w-full rounded-full mt-2  bg-gray-100">
+                      <motion.div
+                        className="h-full bg-[#B3EFB2] rounded-full"
+                        style={{ width: `${lgl.level}%` }}
+                        initial={{
+                          scaleX: 0,
+                          originX: 0,
+                        }}
+                        variants={{
+                          visible: {
+                            scaleX: 1,
+                            transition: {
+                              duration: 1,
+                              delay: 2 + index * 0.2,
+                            },
+                          },
+                        }}
+                      ></motion.div>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        </div>
-      </motion.div>
+            </div>
+          </motion.div>
         </>
         <>
-        <motion.img
-          className="h-[800px]   object-cover object-center"
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1.9 }}
-          src="view-3d-man-with-tech-device-removebg-preview.png"
-          alt="nature image"
-        />
+          <motion.img
+            className="h-[800px] w-[50%]   object-cover object-center"
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1.9 }}
+            src="view-3d-man-with-tech-device-removebg-preview.png"
+            alt="nature image"
+          />
         </>
       </div>
-      
     </Section>
   );
 };
@@ -252,7 +253,7 @@ const ContactSection = () => {
             <IconBrandLinkedin />
             LinkedIn:{" "}
             <a
-              href="https://www.linkedin.com/in/your-linkedin-profile"
+              href="https://www.linkedin.com/in/houssam-lalouli-56a40b215/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-2xl font-teko font-bold text-[#E8F1F2]"
@@ -269,7 +270,7 @@ const ContactSection = () => {
             <IconBrandGithub />
             GitHub:{" "}
             <a
-              href="https://github.com/your-github-profile"
+              href="https://github.com/lalouli"
               target="_blank"
               rel="noopener noreferrer"
               className="text-2xl font-teko font-bold text-[#E8F1F2]"
@@ -285,14 +286,10 @@ const ContactSection = () => {
           >
             <IconMail />
             Email:{" "}
-            <a
-              href="mailto:your-email@example.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-2xl font-teko font-bold text-[#E8F1F2]"
-            >
-              email@example.com
+            <a className="text-2xl font-teko font-bold text-[#E8F1F2]">
+            lalouli.houssam2017@gmail.com
             </a>
+              
           </motion.p>
           <motion.p
             className="w-[400px] text-xl flex flex-row font-skranji font-bold text-[#B3EFB2] gap-2"
@@ -303,7 +300,7 @@ const ContactSection = () => {
             <IconDeviceLandlinePhone />
             Phone Number:{" "}
             <a className="text-2xl font-teko font-bold text-[#E8F1F2]">
-              06 00 00 00 00
+              06 17 93 75 29
             </a>
           </motion.p>
         </div>
@@ -365,24 +362,90 @@ const ContactMeSection = () => {
 };
 
 const ProjectsSection = () => {
-
-
   return (
     <Section>
       <div className="flex flex-col gap-8 w-full">
-      <h2 className="text-5xl font-teko font-bold text-[#F2B450]">
-        Projects
-      </h2>
-      <div className="w-full flex flex-col h-[1400px] border">
-        <div className="w-full h-[700px] border">
-
-        </div>
-        <div className="w-full h-[700px] border">
-
+        <h2 className="text-5xl font-teko font-bold text-[#F2B450]">
+          Projects
+        </h2>
+        <div className="w-full flex flex-col h-[1400px] gap-4">
+          <div className="w-full h-[700px]  flex flex-row gap-4">
+            <div className="h-full w-[50%] border rounded-lg bg-gray-100">
+              <div className="w-full h-[100px] flex justify-center items-center">
+                <h2 className="text-xl md:text-3xl xl:text-5xl font-teko font-bold text-[#B3EFB2]">
+                  FT_TRANSENDENCE
+                </h2>
+              </div>
+              <div className="w-full h-[600px] flex justify-center items-center">
+                <h2 className="w-[80%] text-md md:text-lg xl:text-3xl font-teko font-bold text-[#0D0D0D]">
+                  ft_transendence is a project that combines the game of ping
+                  pong with a user account system and integrated chat. Players
+                  can register and create accounts to participate in multiplayer
+                  matches. The project emphasizes a personalized experience by
+                  allowing players to track their progress and compete against
+                  similarly skilled opponents. With customizable gameplay
+                  settings and a chat feature, ft_transendence provides a
+                  dynamic platform for ping pong enthusiasts to connect, play,
+                  and interact with each other.
+                </h2>
+              </div>
+            </div>
+            <div className="h-full w-[50%] border rounded-lg bg-gray-100">
+              <div className="w-full h-[100px] flex justify-center items-center">
+                <h2 className="text-xl md:text-3xl xl:text-5xl font-teko font-bold text-[#B3EFB2]">
+                  SCHOOL MANAGEMENT SYSTEM
+                </h2>
+              </div>
+              <div className="w-full h-[600px] flex justify-center items-center">
+                <h2 className="w-[80%] text-md md:text-lg xl:text-3xl font-teko font-bold text-[#0D0D0D]">
+                  This project involves creating a website for a faculty that
+                  includes features such as registration, exam locations,
+                  schedules, grades, and other administrative functions. Users
+                  can access the site to view their personal information and
+                  access relevant academic resources.
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div className="w-full h-[700px] flex flex-row gap-4">
+            <div className="h-full w-[50%] border rounded-lg bg-gray-100">
+              <div className="w-full h-[100px] flex justify-center items-center">
+                <h2 className="text-xl md:text-3xl xl:text-5xl font-teko font-bold text-[#B3EFB2]">
+                  INCEPTION
+                </h2>
+              </div>
+              <div className="w-full h-[600px] flex justify-center items-center">
+                <h2 className="w-[80%] text-md md:text-lg xl:text-3xl font-teko font-bold text-[#0D0D0D]">
+                  This project aims to enhance your system administration skills
+                  with Docker. You can create multiple Docker images in a
+                  personal virtual machine, each with Nginx, MariaDB, WordPress,
+                  Adminer, and FTP. Using Docker Compose, you can define and run
+                  multi-container Docker applications with a single
+                  docker-compose.yml file.
+                </h2>
+              </div>
+            </div>
+            <div className="h-full w-[50%] border rounded-lg bg-gray-100">
+              <div className="w-full h-[100px] flex justify-center items-center">
+                <h2 className="text-xl md:text-3xl xl:text-5xl font-teko font-bold text-[#B3EFB2]">
+                  FT_IRC
+                </h2>
+              </div>
+              <div className="w-full h-[600px] flex justify-center items-center">
+                <h2 className="w-[80%] text-md md:text-lg xl:text-3xl font-teko font-bold text-[#0D0D0D]">
+                  This C++ project involves creating an IRC server and using an
+                  IRC client to test it. IRC is a text-based communication
+                  protocol that allows real-time messaging in public or private
+                  channels. IRC clients connect to IRC servers to join channels,
+                  and these servers can be connected together to form a network.
+                  With C++, you can create a server that can handle multiple
+                  clients and manage different channels and messages.
+                </h2>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      </div>
-     
     </Section>
   );
 };

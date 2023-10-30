@@ -3,6 +3,7 @@ import { Canvas, useFrame } from 'react-three-fiber';
 import { OrbitControls } from '@react-three/drei';
 import { Vector3 } from 'three';
 import Particles from "react-particles";
+import { motion, AnimatePresence } from "framer-motion";
 export const Experience = () => {
   const boxRef = useRef();
   const starRef = useRef();
@@ -18,8 +19,7 @@ export const Experience = () => {
       <pointLight position={[10, 10, 10]} />
 
       <mesh ref={boxRef}>
-        {/* <boxGeometry args={[1, 1, 1]}  /> */}
-        {/* <meshNormalMaterial /> */}
+    
       </mesh>
 
       <gridHelper args={[10, 10]} />
