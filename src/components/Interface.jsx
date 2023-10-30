@@ -3,7 +3,10 @@ import { IconBrandLinkedin } from "@tabler/icons-react";
 import { IconBrandGithub } from "@tabler/icons-react";
 import { IconMail } from "@tabler/icons-react";
 import { IconDeviceLandlinePhone } from "@tabler/icons-react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
+import { Carousel } from "@material-tailwind/react";
+import Slider from 'react-slick';
 const Section = (props) => {
   const { children } = props;
 
@@ -27,9 +30,7 @@ export const Interface = () => {
     <div className="flex flex-col items-center w-screen">
       <AboutSection />
       <SkillsSection />
-      <Section>
-        <h1 className="text-red-500">Projects</h1>
-      </Section>
+      <ProjectsSection />
       <ContactSection />
       <ContactMeSection />
     </div>
@@ -39,25 +40,39 @@ export const Interface = () => {
 const AboutSection = () => {
   return (
     <Section>
-      <motion.div
-        className="w-[350px] md:w-[500px] lg:w-[700px] xl:w-[800px]  h-[100px] text-[#F2B450]  font-teko text-3xl lg:text-4xl xl:text-5xl"
-        initial={{ opacity: 0, y: 25 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 1 }}
-      >
-        👋 Hi , I' am Houssam Lalouli 👦🏻
-      </motion.div>
-      <motion.div
-        className="w-[350px] md:w-[500px] lg:w-[700px] xl:w-[800px]  h-[350px] text-xl md:text-2xl xl:text-3xl text-[#E8F1F2] font-skranji flex items-center justify-center "
-        initial={{ opacity: 0, y: 25 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 1.5 }}
-      >
-        As a front-end developer, I specialize in ReactJS, Next.js, and design.
-        I excel at creating reusable UI components, managing application state,
-        and translating design concepts into visually appealing interfaces. With
-        my skills, I deliver captivating and high-quality web experiences.😇
-      </motion.div>
+      <div className="flex flex-row w-full justify-between">
+        <div className=" flex justify-center items-center flex-col ">
+          <motion.div
+            className="w-[350px] md:w-[500px] lg:w-[700px] xl:w-[800px]  h-[100px] text-[#F2B450]  font-teko text-3xl lg:text-4xl xl:text-5xl"
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1 }}
+          >
+            👋 Hi , I' am Houssam Lalouli 👦🏻
+          </motion.div>
+
+          <motion.div
+            className="w-[350px] md:w-[500px] lg:w-[700px] xl:w-[800px]  h-[350px] text-xl md:text-2xl xl:text-3xl text-[#E8F1F2] font-skranji flex flex-row items-center justify-center "
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1.5 }}
+          >
+            As a front-end developer, I specialize in ReactJS, Next.js, and
+            design. I excel at creating reusable UI components, managing
+            application state, and translating design concepts into visually
+            appealing interfaces. With my skills, I deliver captivating and
+            high-quality web experiences.😇
+          </motion.div>
+        </div>
+        <motion.img
+          className="h-[500px] w-96 rounded-t-full object-cover object-center"
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 1.9 }}
+          src="/09140668.JPG"
+          alt="nature image"
+        />
+      </div>
     </Section>
   );
 };
@@ -83,6 +98,14 @@ const skills = [
     title: "3D Modeling",
     level: 40,
   },
+  {
+    title: "Design UX/ Figma",
+    level: 70,
+  },
+  {
+    title: "Tailwindcss",
+    level: 90,
+  },
 ];
 const languages = [
   {
@@ -102,7 +125,9 @@ const languages = [
 const SkillsSection = () => {
   return (
     <Section>
-      <motion.div whileInView={"visible"}>
+      <div className="flex flex-row justify-between   w-full">
+        <>
+        <motion.div whileInView={"visible"}>
         <h2 className="text-5xl font-teko font-bold text-[#F2B450]">Skills</h2>
         <div className="mt-8 space-y-8">
           {skills.map((skill, index) => (
@@ -195,6 +220,19 @@ const SkillsSection = () => {
           </div>
         </div>
       </motion.div>
+        </>
+        <>
+        <motion.img
+          className="h-[800px]   object-cover object-center"
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 1.9 }}
+          src="view-3d-man-with-tech-device-removebg-preview.png"
+          alt="nature image"
+        />
+        </>
+      </div>
+      
     </Section>
   );
 };
@@ -239,10 +277,11 @@ const ContactSection = () => {
               GitHub Profile
             </a>
           </motion.p>
-          <motion.p className="w-[400px] text-xl flex flex-row font-skranji font-bold text-[#B3EFB2] gap-2"
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1 }}
+          <motion.p
+            className="w-[400px] text-xl flex flex-row font-skranji font-bold text-[#B3EFB2] gap-2"
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1 }}
           >
             <IconMail />
             Email:{" "}
@@ -255,10 +294,12 @@ const ContactSection = () => {
               email@example.com
             </a>
           </motion.p>
-          <motion.p className="w-[400px] text-xl flex flex-row font-skranji font-bold text-[#B3EFB2] gap-2"
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1 }}>
+          <motion.p
+            className="w-[400px] text-xl flex flex-row font-skranji font-bold text-[#B3EFB2] gap-2"
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1 }}
+          >
             <IconDeviceLandlinePhone />
             Phone Number:{" "}
             <a className="text-2xl font-teko font-bold text-[#E8F1F2]">
@@ -315,10 +356,35 @@ const ContactMeSection = () => {
             className="h-32 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1  bg-[#D9F4E4] ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 p-3 font-skranji"
           />
           <div className="flex items-center justify-center py-4 px-8 rounded-lg font-bold text-lg mt-16 ">
-            <PrimaryButton text="Submit" />
+            <PrimaryButton text="Submit " />
           </div>
         </form>
       </div>
     </Section>
   );
 };
+
+const ProjectsSection = () => {
+
+
+  return (
+    <Section>
+      <div className="flex flex-col gap-8 w-full">
+      <h2 className="text-5xl font-teko font-bold text-[#F2B450]">
+        Projects
+      </h2>
+      <div className="w-full flex flex-col h-[1400px] border">
+        <div className="w-full h-[700px] border">
+
+        </div>
+        <div className="w-full h-[700px] border">
+
+        </div>
+      </div>
+      </div>
+     
+    </Section>
+  );
+};
+
+export default ProjectsSection;

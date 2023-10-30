@@ -9,18 +9,24 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@react-three/drei": "^9.84.2",
-    "@react-three/fiber": "^8.14.2",
+    "@material-tailwind/react": "^2.1.4",
+    "@react-three/drei": "^9.88.7",
+    "@react-three/fiber": "^8.15.8",
     "@tabler/icons-react": "^2.35.0",
     "autoprefixer": "10.4.16",
     "framer-motion": "^10.16.4",
     "framer-motion-3d": "^10.16.4",
+    "gsap": "^3.12.2",
     "leva": "^0.9.35",
-    "next": "13.5.2",
+    "next": "^13.5.3",
     "postcss": "8.4.30",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-particles": "^2.12.2",
+    "react-slick": "^0.29.0",
     "react-three-fiber": "^6.0.13",
-    "tailwindcss": "3.3.3"
+    "scrollreveal": "^4.0.9",
+    "tailwindcss": "3.3.3",
+    "three": "^0.158.0"
   }
 }
