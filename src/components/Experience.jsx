@@ -1,9 +1,5 @@
 import React, { useCallback, useRef } from 'react';
 import { Canvas, useFrame } from 'react-three-fiber';
-import { OrbitControls } from '@react-three/drei';
-import { Vector3 } from 'three';
-import Particles from "react-particles";
-import { motion, AnimatePresence } from "framer-motion";
 export const Experience = () => {
   const boxRef = useRef();
   const starRef = useRef();

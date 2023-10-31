@@ -8,12 +8,6 @@ import { useEffect, useState } from "react";
 import { Carousel } from "@material-tailwind/react";
 import Slider from "react-slick";
 
-import { Resend } from 'resend';
-
-const resend = new Resend('re_EVnsGAVj_XatmNZ6ZhzdnimuW4JK6oZNL');
-
-
-
 const Section = (props) => {
   const { children } = props;
 
@@ -76,7 +70,7 @@ const AboutSection = () => {
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.9 }}
-          src="/09140668.JPG"
+          src="09140666-removebg-preview.png"
           alt="nature image"
         />
       </div>
@@ -333,6 +327,7 @@ const ContactSection = () => {
 };
 
 const ContactMeSection = () => {
+  emailjs.init("pepq_RwZNUyIBjE4U");
   const [data, setData] = useState({
     'userName': '',
     'userEmail': '',
@@ -340,34 +335,24 @@ const ContactMeSection = () => {
     'message': ''
   });
 
-  function sendEmail(data){
-      resend.emails.send({
-        from: 'onboarding@resend.dev',
-        to: 'lalouli.houssam2017@gmail.com',
-        subject: 'message from ' + data.userName + ' ' + data.userEmail,
-        html: data.message
-      });
-  }
 
-  function submit(e){
+  async function submit(e){
     e.preventDefault();
-    
-    sendEmail({
-      'userName': e.target.name.value,
-      'userEmail': e.target.email.value,
-      'message': e.target.message.value
-    });
+    const sendEmail = await emailjs.sendForm("service_168mew8", "template_ajkobzr", e.target)
+    console.log(sendEmail);
+    e.target.reset();
   }
 
   return (
     <Section>
-        <div className="flex flex-row justify-between   w-full">
-         <></>
-        </div>
       <h2 className="text-5xl font-teko font-bold text-[#F2B450]">
         Contact me
       </h2>
-      <div className="mt-8 p-8 rounded-md bg-[#7A9E7E] w-96 max-w-full">
+        <div className="flex flex-row justify-between w-full">
+        
+          <div className="flex justify-center items-center">
+          
+      <div className="mt-8 p-8 rounded-md bg-[#7A9E7E] w-96 max-w-full h-[80%] ">
         <form onSubmit={submit}>
           <label
             for="name"
@@ -409,6 +394,18 @@ const ContactMeSection = () => {
           </div>
         </form>
       </div>
+          </div>
+          <>
+         <motion.img
+            className="h-[800px] w-[50%]   object-cover object-center"
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 1.9 }}
+            src="view-3d-man-holding-laptop-removebg-preview.png"
+            alt="nature image"
+          />
+         </>
+        </div>
     </Section>
   );
 };
