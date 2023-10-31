@@ -352,7 +352,7 @@ const ContactMeSection = () => {
         
           <div className="flex justify-center items-center">
           
-      <div className="mt-8 p-8 rounded-md bg-[#7A9E7E] w-96 max-w-full h-[80%] ">
+      <div className="mt-8 p-8 rounded-md bg-[#7A9E7E] w-96 max-w-full ">
         <form onSubmit={submit}>
           <label
             for="name"
@@ -397,7 +397,7 @@ const ContactMeSection = () => {
           </div>
           <>
          <motion.img
-            className="h-[800px] w-[50%]   object-cover object-center"
+            className="h-[700px] w-[50%]   object-cover object-center"
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.9 }}
