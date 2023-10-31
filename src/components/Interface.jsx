@@ -7,6 +7,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Carousel } from "@material-tailwind/react";
 import Slider from "react-slick";
+
+import { Resend } from 'resend';
+
+const resend = new Resend('re_EVnsGAVj_XatmNZ6ZhzdnimuW4JK6oZNL');
+
+
+
 const Section = (props) => {
   const { children } = props;
 
@@ -326,6 +333,32 @@ const ContactSection = () => {
 };
 
 const ContactMeSection = () => {
+  const [data, setData] = useState({
+    'userName': '',
+    'userEmail': '',
+    'subject': '',
+    'message': ''
+  });
+
+  function sendEmail(data){
+      resend.emails.send({
+        from: 'onboarding@resend.dev',
+        to: 'lalouli.houssam2017@gmail.com',
+        subject: 'message from ' + data.userName + ' ' + data.userEmail,
+        html: data.message
+      });
+  }
+
+  function submit(e){
+    e.preventDefault();
+    
+    sendEmail({
+      'userName': e.target.name.value,
+      'userEmail': e.target.email.value,
+      'message': e.target.message.value
+    });
+  }
+
   return (
     <Section>
         <div className="flex flex-row justify-between   w-full">
@@ -335,7 +368,7 @@ const ContactMeSection = () => {
         Contact me
       </h2>
       <div className="mt-8 p-8 rounded-md bg-[#7A9E7E] w-96 max-w-full">
-        <form>
+        <form onSubmit={submit}>
           <label
             for="name"
             className="font-medium font-skranji text-[#E8F1F2] block mb-1"
@@ -391,12 +424,12 @@ const ProjectsSection = () => {
           <div className="w-full h-[700px]  flex flex-row gap-4">
             <div className="h-full w-[50%] border rounded-lg bg-gray-100">
               <div className="w-full h-[100px] flex justify-center items-center">
-                <h2 className="text-xl md:text-3xl xl:text-5xl font-teko font-bold text-[#B3EFB2]">
+                <h2 className="text-xl md:text-3xl xl:text-5xl font-teko font-bold text-[#EE4A98]">
                   FT_TRANSENDENCE
                 </h2>
               </div>
               <div className="w-full h-[600px] flex justify-center items-center">
-                <h2 className="w-[80%] text-sm md:text-lg xl:text-3xl font-skranji font-bold text-[#0D0D0D]">
+                <h2 className="w-[80%] text-sm md:text-lg xl:text-3xl font-skranji font-normal text-[#0D0D0D]">
                   ft_transendence is a project that combines the game of ping
                   pong with a user account system and integrated chat. Players
                   can register and create accounts to participate in multiplayer
@@ -411,12 +444,12 @@ const ProjectsSection = () => {
             </div>
             <div className="h-full w-[50%] border rounded-lg bg-gray-100">
               <div className="w-full h-[100px] flex justify-center items-center">
-                <h2 className="text-xl md:text-3xl xl:text-5xl font-teko font-bold text-[#B3EFB2]">
+                <h2 className="text-xl md:text-3xl xl:text-5xl font-teko font-bold text-[#EE4A98]">
                   SCHOOL MANAGEMENT SYSTEM
                 </h2>
               </div>
               <div className="w-full h-[600px] flex justify-center items-center">
-                <h2 className="w-[80%] text-md md:text-lg xl:text-3xl font-skranji font-bold text-[#0D0D0D]">
+                <h2 className="w-[80%] text-md md:text-lg xl:text-3xl font-skranji  text-[#0D0D0D]">
                   This project involves creating a website for a faculty that
                   includes features such as registration, exam locations,
                   schedules, grades, and other administrative functions. Users
@@ -429,12 +462,12 @@ const ProjectsSection = () => {
           <div className="w-full h-[700px] flex flex-row gap-4">
             <div className="h-full w-[50%] border rounded-lg bg-gray-100">
               <div className="w-full h-[100px] flex justify-center items-center">
-                <h2 className="text-xl md:text-3xl xl:text-5xl font-teko font-bold text-[#B3EFB2]">
+                <h2 className="text-xl md:text-3xl xl:text-5xl font-teko font-bold text-[#EE4A98]">
                   INCEPTION
                 </h2>
               </div>
               <div className="w-full h-[600px] flex justify-center items-center">
-                <h2 className="w-[80%] text-md md:text-lg xl:text-3xl font-skranji font-bold text-[#0D0D0D]">
+                <h2 className="w-[80%] text-md md:text-lg xl:text-3xl font-skranji  text-[#0D0D0D]">
                   This project aims to enhance your system administration skills
                   with Docker. You can create multiple Docker images in a
                   personal virtual machine, each with Nginx, MariaDB, WordPress,
@@ -446,12 +479,12 @@ const ProjectsSection = () => {
             </div>
             <div className="h-full w-[50%] border rounded-lg bg-gray-100">
               <div className="w-full h-[100px] flex justify-center items-center">
-                <h2 className="text-xl md:text-3xl xl:text-5xl font-teko font-bold text-[#B3EFB2]">
+                <h2 className="text-xl md:text-3xl xl:text-5xl font-teko font-bold text-[#EE4A98]">
                   FT_IRC
                 </h2>
               </div>
               <div className="w-full h-[600px] flex justify-center items-center">
-                <h2 className="w-[80%] text-md md:text-lg xl:text-3xl font-skranji font-bold text-[#0D0D0D]">
+                <h2 className="w-[80%] text-md md:text-lg xl:text-3xl font-skranji  text-[#0D0D0D]">
                   This C++ project involves creating an IRC server and using an
                   IRC client to test it. IRC is a text-based communication
                   protocol that allows real-time messaging in public or private
